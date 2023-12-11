@@ -39,6 +39,30 @@ MJ Bot의 접두사는 ``/``로, 채팅창에 입력 시 슬래시 커멘드가 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/trans.png)<br><br>
 
 ``/청소`` ``숫자`` : 입력한 숫자만큼의 메시지를 삭제합니다.<br>
-(숫자는 1~100 까지 입력할 수 있으며, 관리자 권한이 있는 유저만 사용할 수 있습니다.)<br>
+(숫자는 1~100 까지 입력할 수 있으며, 관리자 권한이 없는 유저는 자신의 메시지만 삭제됩니다.)<br>
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/clean.png)<br><br>
+
+## **봇 설치 및 사용법**
+
+**1.** 노드 설치 (Latest LTS) [NodeJS](https://nodejs.org/ko/)
+
+**2.** 이 저장소를 다운로드하고 압축 해제 | 또는 git clone
+
+**3.**  **`예시.env`** 파일을 참조하여 **`.env`** 파일 생성 후 정보 입력 
+
+### _.env 파일 필수 입력_
+
+```env
+PREFIX=BOT_PREFIX
+SUB_PREFIX=BOT_SUB_PREFIX
+NAVER_CLIENT_ID=NAVER_CLIENT_ID
+NAVER_CLIENT_SECRET=NAVER_CLIENT_SECRET
+TOKEN=BOT_TOKEN
+```
+
+**4.** 노드 모듈 설치/업데이트를 위해, Shell에서 다음 코드를 그대로 실행합니다. <br/>
+
+```shell
+npm install @discordjs/rest inko axios
+```
