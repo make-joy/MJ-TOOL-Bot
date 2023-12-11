@@ -66,3 +66,13 @@ TOKEN=BOT_TOKEN
 ```shell
 npm install @discordjs/rest inko axios
 ```
+
+**5.** 봇을 실행합니다. (택1)<br/>
+
+```shell
+npm start
+```
+
+```shell
+yarn start
+```
