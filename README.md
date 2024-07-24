@@ -25,7 +25,7 @@ MJ Bot의 접두사는 ``/``로, 채팅창에 입력 시 슬래시 커멘드가 
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/enko.png)<br><br>
 
-``/자동번역`` : 지원하는 언어 자동번역 설정을 활성화 또는 비활성화합니다.<br>
+(naver papago API 지원 종료) ~~``/자동번역`` : 지원하는 언어 자동번역 설정을 활성화 또는 비활성화합니다.<br>~~
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/auto_trans.png)<br><br>
 
@@ -33,8 +33,8 @@ MJ Bot의 접두사는 ``/``로, 채팅창에 입력 시 슬래시 커멘드가 
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/avatar.png)<br><br>
 
-``/번역`` ``텍스트`` ``언어`` : 텍스트를 다른 언어로 번역합니다.<br>
-(지원 언어 : 한국어, 영어, 일본어, 중국어 간체/번체, 프랑스어, 독일어, 러시아어, 스페인어, 베트남어, 인도네시아어, 태국어)<br>
+(naver papago API 지원 종료) ~~``/번역`` ``텍스트`` ``언어`` : 텍스트를 다른 언어로 번역합니다.<br>~~
+~~(지원 언어 : 한국어, 영어, 일본어, 중국어 간체/번체, 프랑스어, 독일어, 러시아어, 스페인어, 베트남어, 인도네시아어, 태국어)<br>~~
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/trans.png)<br><br>
 
@@ -56,8 +56,8 @@ MJ Bot의 접두사는 ``/``로, 채팅창에 입력 시 슬래시 커멘드가 
 ```env
 PREFIX=BOT_PREFIX
 SUB_PREFIX=BOT_SUB_PREFIX
-NAVER_CLIENT_ID=NAVER_CLIENT_ID
-NAVER_CLIENT_SECRET=NAVER_CLIENT_SECRET
+# (naver papago API 지원 종료) NAVER_CLIENT_ID=NAVER_CLIENT_ID
+# (naver papago API 지원 종료) NAVER_CLIENT_SECRET=NAVER_CLIENT_SECRET
 TOKEN=BOT_TOKEN
 ```
 
