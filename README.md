@@ -25,18 +25,26 @@ MJ Bot의 접두사는 ``/``로, 채팅창에 입력 시 슬래시 커멘드가 
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/enko.png)<br><br>
 
-(naver papago API 지원 종료) ~~``/자동번역`` : 지원하는 언어 자동번역 설정을 활성화 또는 비활성화합니다.<br>~~
-
-![image](https://makejoy.co.kr/github/imgs/mjbot/auto_trans.png)<br><br>
+<details>
+    <summary>[사용불가] /자동번역 (naver papago API 지원 종료) [접기/펼치기]</summary>
+  
+``/자동번역`` : 지원하는 언어 자동번역 설정을 활성화 또는 비활성화합니다.<br>
+![image](https://makejoy.co.kr/github/imgs/mjbot/auto_trans.png)
+<br><br>
+</details>
 
 ``/프로필`` ``@유저멘션`` : 멘션한 유저의 프로필 사진 및 정보를 확인합니다. (멘션 생략 시 본인의 프로필 정보)<br>
 
 ![image](https://makejoy.co.kr/github/imgs/mjbot/avatar.png)<br><br>
 
-(naver papago API 지원 종료) ~~``/번역`` ``텍스트`` ``언어`` : 텍스트를 다른 언어로 번역합니다.<br>~~
-~~(지원 언어 : 한국어, 영어, 일본어, 중국어 간체/번체, 프랑스어, 독일어, 러시아어, 스페인어, 베트남어, 인도네시아어, 태국어)<br>~~
-
-![image](https://makejoy.co.kr/github/imgs/mjbot/trans.png)<br><br>
+<details>
+    <summary>[사용불가] /번역 (naver papago API 지원 종료) [접기/펼치기]</summary>
+  
+``/번역`` ``텍스트`` ``언어`` : 텍스트를 다른 언어로 번역합니다.<br>
+(지원 언어 : 한국어, 영어, 일본어, 중국어 간체/번체, 프랑스어, 독일어, 러시아어, 스페인어, 베트남어, 인도네시아어, 태국어)<br>
+![image](https://makejoy.co.kr/github/imgs/mjbot/auto_trans.png)
+<br><br>
+</details>
 
 ``/청소`` ``숫자`` : 입력한 숫자만큼의 메시지를 삭제합니다.<br>
 (숫자는 1~100 까지 입력할 수 있으며, 관리자 권한이 없는 유저는 자신의 메시지만 삭제됩니다.)<br>
