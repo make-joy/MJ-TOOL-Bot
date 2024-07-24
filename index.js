@@ -17,16 +17,11 @@
     //슬래시 명령어
     const { REST } = require('@discordjs/rest');
     const { Routes } = require('discord-api-types/v9');
-
+    
     const commands = [
         {
             name: 'enko',
             description: '한글 영타 자동변환 설정을 활성화 또는 비활성화합니다.',
-            type: 1,
-        },
-        {
-            name: '자동번역',
-            description: '지원하는 언어 자동번역 설정을 활성화 또는 비활성화합니다.',
             type: 1,
         },
         {
@@ -52,25 +47,33 @@
                     required: false
                 }
             ]
-        },
-        {
-            name: '번역',
-            description: '텍스트를 다른 언어로 번역합니다.',
-            options: [                
-                {
-                    name: '텍스트',
-                    description: '번역할 텍스트를 입력하세요.',
-                    type: 3, // 타입: 문자열
-                    required: true
-                },{
-                    name: '언어',
-                    description: '번역될 언어를 입력하세요.',
-                    type: 3, // 타입: 문자열
-                    required: true
-                }
-            ]
         }
     ];
+
+    /* commands 배열에서 아래 항목 제거 (naver papago API 지원 종료)
+    {
+        name: '자동번역',
+        description: '지원하는 언어 자동번역 설정을 활성화 또는 비활성화합니다.',
+        type: 1,
+    },
+    {
+        name: '번역',
+        description: '텍스트를 다른 언어로 번역합니다.',
+        options: [                
+            {
+                name: '텍스트',
+                description: '번역할 텍스트를 입력하세요.',
+                type: 3, // 타입: 문자열
+                required: true
+            },{
+                name: '언어',
+                description: '번역될 언어를 입력하세요.',
+                type: 3, // 타입: 문자열
+                required: true
+            }
+        ]
+    }
+    */
 
     const clientId = process.env.CLIENT_ID;
     const token = process.env.TOKEN;
@@ -110,22 +113,23 @@
     }
 /*---------- inko(한글영타변환) Variable E ----------*/
 
+// (naver papago API 지원 종료)
 /*---------- nmt(papago) Variable S ----------*/
-    const axios = require('axios');
-    const senderPapago = new Set();
-    let lang={"ko":"한국어","ja":"일본어","zh-CN":"중국어 간체","zh-TW":"중국어 번체","en":"영어","fr":"프랑스어","de":"독일어","ru":"러시아어","es":"스페인어","vi":"베트남어","id":"인도네시아어","th":"태국어"};    //번역어
-    function getKeyOrValue(msg) {
-        if (lang.hasOwnProperty(msg)) {
-            return msg;
-        } else {
-            for (let key in lang) {
-                if (lang[key] == msg) {
-                    return key;
-                }
-            }
-        }                                    
-        return null;
-    }
+//    const axios = require('axios');
+//    const senderPapago = new Set();
+//    let lang={"ko":"한국어","ja":"일본어","zh-CN":"중국어 간체","zh-TW":"중국어 번체","en":"영어","fr":"프랑스어","de":"독일어","ru":"러시아어","es":"스페인어","vi":"베트남어","id":"인도네시아어","th":"태국어"};    //번역어
+//    function getKeyOrValue(msg) {
+//        if (lang.hasOwnProperty(msg)) {
+//            return msg;
+//        } else {
+//            for (let key in lang) {
+//                if (lang[key] == msg) {
+//                    return key;
+//                }
+//            }
+//        }                                    
+//       return null;
+//    }
 /*---------- nmt(papago) Variable E ----------*/
 
 client.on('messageCreate', async (message) => { 
@@ -222,7 +226,8 @@ client.on('messageCreate', async (message) => {
             return;
         }
 
-        // 한글이 아닐경우 자동 번역
+        // 한글이 아닐경우 자동 번역 (naver papago API 지원 종료)
+        /*
         if (senderPapago.has(message.author.id)) {
             if ((/[^ㄱ-ㅎㅏ-ㅣ가-힣]+/).test(message.content)) {
                 let encodedText = encodeURIComponent(message.content);
@@ -244,6 +249,7 @@ client.on('messageCreate', async (message) => {
             }
             return;
         }
+        */
 
     }
 });
@@ -267,7 +273,8 @@ client.on('interactionCreate', async (interaction) => {
             }
         }
 
-        // 자동번역
+        // 자동번역 (naver papago API 지원 종료)
+        /*
         if (commandName == '자동번역') {
             if (senderPapago.has(interaction.user.id)) {
                 senderPapago.delete(interaction.user.id);
@@ -277,6 +284,7 @@ client.on('interactionCreate', async (interaction) => {
                 await interaction.reply(`${interaction.user} 자동번역 활성화\n(명령어 재입력시 비활성화)`);
             }
         }
+        */
 
         // 채팅청소
         if (commandName == '청소') {
@@ -317,8 +325,7 @@ client.on('interactionCreate', async (interaction) => {
                 }
             }
         }
-
-
+        
         // 프로필
         if (commandName == '프로필') {
             const user = options.getUser('사용자') || interaction.user;
@@ -348,7 +355,8 @@ client.on('interactionCreate', async (interaction) => {
             await interaction.reply({ embeds: [embed] });
         }
 
-        // 번역
+        // 번역 (naver papago API 지원 종료)
+        /*
         if (commandName == '번역') {
             const targetLanguage = options.getString('언어');
             const text = options.getString('텍스트');
@@ -387,7 +395,7 @@ client.on('interactionCreate', async (interaction) => {
                 await interaction.editReply({ embeds: [embed] });
             }
         }
-
+        */
     } catch (e) {
         await interaction.reply('오류가 발생하였습니다.\n'+e);
     }
