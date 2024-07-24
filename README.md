@@ -42,7 +42,7 @@ MJ Bot의 접두사는 ``/``로, 채팅창에 입력 시 슬래시 커멘드가 
   
 ``/번역`` ``텍스트`` ``언어`` : 텍스트를 다른 언어로 번역합니다.<br>
 (지원 언어 : 한국어, 영어, 일본어, 중국어 간체/번체, 프랑스어, 독일어, 러시아어, 스페인어, 베트남어, 인도네시아어, 태국어)<br>
-![image](https://makejoy.co.kr/github/imgs/mjbot/auto_trans.png)
+![image](https://makejoy.co.kr/github/imgs/mjbot/trans.png)
 <br><br>
 </details>
 
